@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>Cart</title>
+      <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <link rel=stylesheet href="css/index.css">
+        <script src="javascript/Main.js" async></script>
+        <link rel="stylesheet" href="css/additional.css">
+        <script type="module" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.esm.js"></script>
+          <script nomodule="" src="https://unpkg.com/ionicons@5.2.3/dist/ionicons/ionicons.js"></script>
+    </head>
+    
+<body>
+    
+    <nav class="mainnav">
+        <div class="drops"  onclick=" togglenav() "></div>
+            <ul>
+                <li><a href="#">Desktops&Laptops</br>Prebuild</a>
+                    <ul><li><a href="gamingdesktops.html">Gaming Desktops</a></li>
+                        <li><a href="workst.html">Workstations</a></li>
+                        <li><a href="gaminglap.html">Gaming Laptops</a></li>
+                        <li><a href="workslap.html">WorkstationLaptops</a></li>
+                    </ul></li>
+                           
+                    
+                <li class="rest"><a href="buildyourway.html">BuildyourWay</a></li>
+                <li class="rest"><a href="gearshop.html">Gearshop</a></li>
+                
+                <li class="cart"><a href="cart.html"> Cart
+                    <ion-icon name="cart"></ion-icon><span>0</span>
+                </a></li>
+            </ul>
+
+            
+        </nav>
+    <aside class="sidebar">
+                <ul>
+                  <li><span>User</span></li>  
+                <li><a href="index.html">Home</a></li>
+                <li><a href="checkorder.php">Order-Info</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="https://linustechtips.com/">Forum</a></li>
+                <li><a href="Aboutus.html">About Us</a></li>
+                </ul>
+    </aside>
+<div class="cart-container" >
+    <button class="hides" id="hides" onclick="active()"> Checkout</button> 
+        <div  class="checkout" id="checkoutfd">
+            <input  type="button"  value="Close" onclick="deactive()" > <br>
+                <form  name="checkoutf" action="checkorder.php" method="POST" onsubmit="share()" >
+                <label>Name:</label><br>
+                <input id="name" name="name" type="text" class="name" required/> <br>
+                <label>Address:</label><br>
+                <input id="add" name="address"  type="text" class="add" required /><br>
+                <label>Phone No:</label><br>
+                <input id="phone" name="phone" type="tel" class="num" required/><br>
+                <label>Email-id:</label><br>
+                <input id="email" name="email" type="email" class="email" required/><br>
+               
+                
+                <input  type="submit" value="Confirm" >
+
+            </form>
+        </div>
+    <div class="products-header">
+            <h5 class="title">TITLE</h5>
+            <h5 class="price">PRICE</h5>
+            <h5 class="qty">QUANTITY</h5>
+            <h5 class="total">TOTAL</h5>
+            
+        </div>
+        <div class="products">
+        </div>
+        <div class="totalcost">
+
+        </div>
+        
+        
+ </div>
+ 
+ <script>
+     function share()
+{
+  var v=  localStorage.getItem("productsincart");
+  
+ var name = document.getElementById('name').value; 
+ var email = document.getElementById('email').value; 
+ var phone = document.getElementById('phone').value; 
+    var adds=document.getElementById('add').value;
+    
+ $.post('process.php', {'name':name,'adds':adds,'phone':phone,'email':email,'products':v}, function(data){
+  alert('Order Placed Succesfully');
+});
+localStorage.removeItem('cartnumbers');
+localStorage.removeItem('productsincart');
+localStorage.removeItem('totalcost');
+}
+ </script>
+
+     
+    
+
+</body>
+</html>

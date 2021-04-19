@@ -1,0 +1,17 @@
+1.selling prebuild
+2.build your way
+3.buy parts for own build
+4.repair section
+	check for warranty&stuff
+	a.replacement parts
+	b.ship to company & warranty stuff
+5.virtual build(extra part might add might not (considering tdp part too))
+6.payment system(advace stuff)
+7.having all things with best ui and options
+8.guides section like forum type
+9.laptop section can integrated with prebuild
+10.focus on dark mode
+11.account  based system with cookie support
+12.personal menu which has info of products and more stuff
+13.extras easter egg and code bonus system 
+14.also sales for diff fest. and stuff
